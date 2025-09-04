@@ -136,6 +136,14 @@
     @apply bg-background text-foreground;
     /* Set Figtree as the default font family for the entire website */
     font-family: var(--font-figtree);
+    /* Add padding for fixed header */
+    padding-top: 80px;
+  }
+  
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 bg-purple-600 text-white px-4 py-2 rounded-md;
+    @apply transform -translate-y-16 focus:translate-y-0 transition-transform;
   }
 }
 
