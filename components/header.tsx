@@ -104,7 +104,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2" role="navigation" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center space-x-2" role="navigation" aria-label="Main navigation">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.items ? (
@@ -176,12 +176,12 @@ export default function Header() {
           {/* Right Section */}
           <div className="flex items-center space-x-4">
             {/* Search */}
-            <div className="hidden xl:block max-w-sm">
+            <div className="hidden lg:block max-w-sm">
               <SiteSearch />
             </div>
 
             {/* CTA Button */}
-            <div className="hidden lg:block">
+            <div className="hidden md:block">
               <Link href="/launch">
                 <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
                   Launch App
@@ -191,7 +191,7 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden">
+            <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
@@ -219,7 +219,7 @@ export default function Header() {
       {isMenuOpen && (
         <div 
           id="mobile-menu"
-          className="fixed top-[80px] left-0 right-0 bg-black/95 backdrop-blur-lg border-t border-white/10 lg:hidden z-40 max-h-[calc(100vh-80px)] overflow-y-auto"
+          className="fixed top-[80px] left-0 right-0 bg-black/95 backdrop-blur-lg border-t border-white/10 md:hidden z-40 max-h-[calc(100vh-80px)] overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="mobile-menu-title"
@@ -227,7 +227,7 @@ export default function Header() {
           <div className="sr-only" id="mobile-menu-title">Navigation Menu</div>
           <div className="container mx-auto px-6 py-6">
             {/* Search in mobile */}
-            <div className="mb-6 xl:hidden">
+            <div className="mb-6 lg:hidden">
               <SiteSearch />
             </div>
             
@@ -274,7 +274,7 @@ export default function Header() {
               ))}
               
               {/* Mobile CTA */}
-              <div className="pt-6 border-t border-white/10 lg:hidden">
+              <div className="pt-6 border-t border-white/10 md:hidden">
                 <Link href="/launch" onClick={() => setIsMenuOpen(false)}>
                   <Button 
                     className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 min-h-[48px] text-base font-medium rounded-xl"
