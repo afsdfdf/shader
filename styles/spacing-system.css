@@ -1,0 +1,132 @@
+/* 统一间距系统 */
+
+/* 间距变量定义 */
+:root {
+  /* 垂直间距 */
+  --section-spacing: 5rem;      /* 80px - 主要区块间距 */
+  --subsection-spacing: 4rem;   /* 64px - 次要区块间距 */
+  --component-spacing: 3rem;    /* 48px - 组件间距 */
+  --element-spacing: 2rem;      /* 32px - 元素间距 */
+  --content-spacing: 1.5rem;    /* 24px - 内容间距 */
+  --item-spacing: 1rem;         /* 16px - 项目间距 */
+  --tight-spacing: 0.75rem;     /* 12px - 紧凑间距 */
+  --minimal-spacing: 0.5rem;    /* 8px - 最小间距 */
+  
+  /* 水平间距 */
+  --container-padding: 1rem;    /* 16px - 容器内边距 */
+  --card-padding: 1.5rem;       /* 24px - 卡片内边距 */
+  --button-padding-x: 2rem;     /* 32px - 按钮水平内边距 */
+  --button-padding-y: 0.75rem;  /* 12px - 按钮垂直内边距 */
+  
+  /* 响应式间距调整 */
+  --mobile-section-spacing: 3rem;     /* 48px - 移动端主要区块间距 */
+  --mobile-subsection-spacing: 2.5rem; /* 40px - 移动端次要区块间距 */
+  --mobile-component-spacing: 2rem;    /* 32px - 移动端组件间距 */
+}
+
+/* 标准化的间距类 */
+.section-spacing { padding-top: var(--section-spacing); padding-bottom: var(--section-spacing); }
+.subsection-spacing { padding-top: var(--subsection-spacing); padding-bottom: var(--subsection-spacing); }
+.component-spacing { padding-top: var(--component-spacing); padding-bottom: var(--component-spacing); }
+.element-spacing { padding-top: var(--element-spacing); padding-bottom: var(--element-spacing); }
+.content-spacing { padding-top: var(--content-spacing); padding-bottom: var(--content-spacing); }
+
+/* 顶部间距 */
+.section-spacing-top { padding-top: var(--section-spacing); }
+.subsection-spacing-top { padding-top: var(--subsection-spacing); }
+.component-spacing-top { padding-top: var(--component-spacing); }
+.element-spacing-top { padding-top: var(--element-spacing); }
+
+/* 底部间距 */
+.section-spacing-bottom { padding-bottom: var(--section-spacing); }
+.subsection-spacing-bottom { padding-bottom: var(--subsection-spacing); }
+.component-spacing-bottom { padding-bottom: var(--component-spacing); }
+.element-spacing-bottom { padding-bottom: var(--element-spacing); }
+
+/* 外边距 */
+.section-margin { margin-top: var(--section-spacing); margin-bottom: var(--section-spacing); }
+.subsection-margin { margin-top: var(--subsection-spacing); margin-bottom: var(--subsection-spacing); }
+.component-margin { margin-top: var(--component-spacing); margin-bottom: var(--component-spacing); }
+.element-margin { margin-top: var(--element-spacing); margin-bottom: var(--element-spacing); }
+
+/* 容器内边距 */
+.container-padding { padding-left: var(--container-padding); padding-right: var(--container-padding); }
+.card-padding { padding: var(--card-padding); }
+
+/* 按钮内边距 */
+.button-padding { 
+  padding-left: var(--button-padding-x); 
+  padding-right: var(--button-padding-x);
+  padding-top: var(--button-padding-y);
+  padding-bottom: var(--button-padding-y);
+}
+
+/* 网格间距 */
+.grid-gap-standard { gap: var(--element-spacing); }
+.grid-gap-compact { gap: var(--content-spacing); }
+.grid-gap-tight { gap: var(--item-spacing); }
+
+/* 列表间距 */
+.list-spacing > * + * { margin-top: var(--item-spacing); }
+.list-spacing-tight > * + * { margin-top: var(--tight-spacing); }
+.list-spacing-loose > * + * { margin-top: var(--content-spacing); }
+
+/* 响应式间距 */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: var(--mobile-section-spacing);
+    --subsection-spacing: var(--mobile-subsection-spacing);
+    --component-spacing: var(--mobile-component-spacing);
+  }
+  
+  /* 移动端特殊间距 */
+  .mobile-tight { padding: var(--item-spacing); }
+  .mobile-compact { padding: var(--content-spacing); }
+  
+  /* 减少移动端的大间距 */
+  .section-spacing { padding-top: var(--mobile-section-spacing); padding-bottom: var(--mobile-section-spacing); }
+  .subsection-spacing { padding-top: var(--mobile-subsection-spacing); padding-bottom: var(--mobile-subsection-spacing); }
+}
+
+/* 特殊用途间距 */
+.hero-spacing { 
+  padding-top: calc(var(--section-spacing) + 2rem); 
+  padding-bottom: var(--section-spacing); 
+}
+
+.footer-spacing { 
+  padding-top: var(--subsection-spacing); 
+  padding-bottom: var(--component-spacing); 
+}
+
+/* 卡片内部间距 */
+.card-header-spacing { margin-bottom: var(--content-spacing); }
+.card-content-spacing { margin-bottom: var(--item-spacing); }
+.card-footer-spacing { margin-top: var(--content-spacing); }
+
+/* 文本间距 */
+.text-spacing > p + p { margin-top: var(--item-spacing); }
+.text-spacing > h1 + *, 
+.text-spacing > h2 + *, 
+.text-spacing > h3 + * { margin-top: var(--content-spacing); }
+
+/* 按钮组间距 */
+.button-group { gap: var(--item-spacing); }
+.button-group-tight { gap: var(--tight-spacing); }
+.button-group-loose { gap: var(--content-spacing); }
+
+/* 表单间距 */
+.form-spacing > * + * { margin-top: var(--content-spacing); }
+.form-group-spacing > * + * { margin-top: var(--item-spacing); }
+
+/* 导航间距 */
+.nav-spacing { gap: var(--tight-spacing); }
+.nav-item-padding { padding: var(--tight-spacing) var(--item-spacing); }
+
+/* 统一的容器最大宽度 */
+.container-sm { max-width: 640px; margin-left: auto; margin-right: auto; }
+.container-md { max-width: 768px; margin-left: auto; margin-right: auto; }
+.container-lg { max-width: 1024px; margin-left: auto; margin-right: auto; }
+.container-xl { max-width: 1280px; margin-left: auto; margin-right: auto; }
+.container-2xl { max-width: 1536px; margin-left: auto; margin-right: auto; }
+
