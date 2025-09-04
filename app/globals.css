@@ -1,10 +1,10 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "../styles/image-optimization.css";
 @import "../styles/accessibility.css";
 @import "../styles/spacing-system.css";
-
-@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Updated color tokens to match dramatic lighting design brief */
